@@ -1,12 +1,12 @@
 /* eslint-disable global-require */
-const chai = require( 'chai' );
+const chai = require("chai");
 
 const { expect } = chai;
 
 // Use chai custom assertion library
-chai.use( require( 'chai-string' ) );
-chai.use( require( 'chai-exclude' ) );
-chai.use( require( 'chai-match-pattern' ) );
+chai.use(require("chai-string"));
+chai.use(require("chai-exclude"));
+chai.use(require("chai-match-pattern"));
 
 /**
  * This wrapper take methods from default assert library to give access to use it from I object.
@@ -14,7 +14,6 @@ chai.use( require( 'chai-match-pattern' ) );
  * other assertion libraries.
  */
 class chaiWrapper {
-
   /**
    * https://www.chaijs.com/api/bdd/#method_equal
    * @param {*} actualValue
@@ -22,10 +21,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertEqual( actualValue, expectedValue, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.equal( expectedValue );
-  
+  assertEqual(actualValue, expectedValue, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.equal(expectedValue);
   }
 
   /**
@@ -36,10 +33,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertNotEqual( actualValue, expectedValue, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).not.to.equal( expectedValue );
-  
+  assertNotEqual(actualValue, expectedValue, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).not.to.equal(expectedValue);
   }
 
   /**
@@ -50,10 +45,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertDeepEqual( actualValue, expectedValue, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.deep.equal( expectedValue );
-  
+  assertDeepEqual(actualValue, expectedValue, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.deep.equal(expectedValue);
   }
 
   /**
@@ -65,10 +58,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertNotDeepEqual( actualValue, expectedValue, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.not.deep.equal( expectedValue );
-  
+  assertNotDeepEqual(actualValue, expectedValue, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.not.deep.equal(expectedValue);
   }
 
   /**
@@ -78,12 +69,10 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertContain( actualValue, expectedValueToContain, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.contain(
+  assertContain(actualValue, expectedValueToContain, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.contain(
       expectedValueToContain
     );
-  
   }
 
   /**
@@ -97,13 +86,11 @@ class chaiWrapper {
   assertNotContain(
     actualValue,
     expectedValueToNotContain,
-    customErrorMsg = ''
-  ){
-
-    return expect( actualValue, customErrorMsg ).not.to.contain(
+    customErrorMsg = ""
+  ) {
+    return expect(actualValue, customErrorMsg).not.to.contain(
       expectedValueToNotContain
     );
-  
   }
 
   /**
@@ -113,12 +100,10 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertStartsWith( actualValue, expectedValueToStartWith, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.startsWith(
+  assertStartsWith(actualValue, expectedValueToStartWith, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.startsWith(
       expectedValueToStartWith
     );
-  
   }
 
   /**
@@ -132,13 +117,11 @@ class chaiWrapper {
   assertNotStartsWith(
     actualValue,
     expectedValueToNotStartWith,
-    customErrorMsg = ''
-  ){
-
-    return expect( actualValue, customErrorMsg ).not.to.startsWith(
+    customErrorMsg = ""
+  ) {
+    return expect(actualValue, customErrorMsg).not.to.startsWith(
       expectedValueToNotStartWith
     );
-  
   }
 
   /**
@@ -148,12 +131,10 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertEndsWith( actualValue, expectedValueToEndWith, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.endsWith(
+  assertEndsWith(actualValue, expectedValueToEndWith, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.endsWith(
       expectedValueToEndWith
     );
-  
   }
 
   /**
@@ -167,13 +148,11 @@ class chaiWrapper {
   assertNotEndsWith(
     actualValue,
     expectedValueToNotEndWith,
-    customErrorMsg = ''
-  ){
-
-    return expect( actualValue, customErrorMsg ).not.to.endsWith(
+    customErrorMsg = ""
+  ) {
+    return expect(actualValue, customErrorMsg).not.to.endsWith(
       expectedValueToNotEndWith
     );
-  
   }
 
   /**
@@ -183,11 +162,9 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertJsonSchema( targetData, jsonSchema, customErrorMsg = '' ){
-
-    chai.use( require( 'chai-json-schema' ) );
-    return expect( targetData, customErrorMsg ).to.be.jsonSchema( jsonSchema );
-  
+  assertJsonSchema(targetData, jsonSchema, customErrorMsg = "") {
+    chai.use(require("chai-json-schema"));
+    return expect(targetData, customErrorMsg).to.be.jsonSchema(jsonSchema);
   }
 
   /**
@@ -201,13 +178,11 @@ class chaiWrapper {
   assertJsonSchemaUsingAJV(
     targetData,
     jsonSchema,
-    customErrorMsg = '',
+    customErrorMsg = "",
     ajvOptions = { allErrors: true }
-  ){
-
-    chai.use( require( 'chai-json-schema-ajv' ).create( ajvOptions ) );
-    return expect( targetData, customErrorMsg ).to.be.jsonSchema( jsonSchema );
-  
+  ) {
+    chai.use(require("chai-json-schema-ajv").create(ajvOptions));
+    return expect(targetData, customErrorMsg).to.be.jsonSchema(jsonSchema);
   }
 
   /**
@@ -217,10 +192,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertHasProperty( targetData, propertyName, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.have.property( propertyName );
-  
+  assertHasProperty(targetData, propertyName, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.have.property(propertyName);
   }
 
   /**
@@ -230,10 +203,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertHasAProperty( targetData, propertyName, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.have.a.property( propertyName );
-  
+  assertHasAProperty(targetData, propertyName, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.have.a.property(propertyName);
   }
 
   /**
@@ -243,10 +214,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertToBeA( targetData, type, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.be.a( type );
-  
+  assertToBeA(targetData, type, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.be.a(type);
   }
 
   /**
@@ -256,10 +225,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertToBeAn( targetData, type, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.be.an( type );
-  
+  assertToBeAn(targetData, type, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.be.an(type);
   }
 
   /**
@@ -269,10 +236,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertMatchRegex( targetData, regex, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.match( regex );
-  
+  assertMatchRegex(targetData, regex, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.match(regex);
   }
 
   /**
@@ -282,10 +247,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertLengthOf( targetData, length, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.have.lengthOf( length );
-  
+  assertLengthOf(targetData, length, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.have.lengthOf(length);
   }
 
   /**
@@ -294,10 +257,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertEmpty( targetData, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.be.empty;
-  
+  assertEmpty(targetData, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.be.empty;
   }
 
   /**
@@ -306,10 +267,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertTrue( targetData, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.be.true;
-  
+  assertTrue(targetData, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.be.true;
   }
 
   /**
@@ -318,10 +277,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertFalse( targetData, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.be.false;
-  
+  assertFalse(targetData, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.be.false;
   }
 
   /**
@@ -331,10 +288,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertAbove( targetData, aboveThan, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.be.above( aboveThan );
-  
+  assertAbove(targetData, aboveThan, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.be.above(aboveThan);
   }
 
   /**
@@ -344,10 +299,8 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertBelow( targetData, belowThan, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.be.below( belowThan );
-  
+  assertBelow(targetData, belowThan, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.be.below(belowThan);
   }
 
   /**
@@ -358,12 +311,10 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertLengthAboveThan( targetData, lengthAboveThan, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.have.lengthOf.above(
+  assertLengthAboveThan(targetData, lengthAboveThan, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.have.lengthOf.above(
       lengthAboveThan
     );
-  
   }
 
   /**
@@ -374,12 +325,10 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertLengthBelowThan( targetData, lengthBelowThan, customErrorMsg = '' ){
-
-    return expect( targetData, customErrorMsg ).to.have.lengthOf.below(
+  assertLengthBelowThan(targetData, lengthBelowThan, customErrorMsg = "") {
+    return expect(targetData, customErrorMsg).to.have.lengthOf.below(
       lengthBelowThan
     );
-  
   }
 
   /**
@@ -389,28 +338,47 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns
    */
-  assertEqualIgnoreCase( actualValue, expectedValue, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.equalIgnoreCase(
+  assertEqualIgnoreCase(actualValue, expectedValue, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.equalIgnoreCase(
       expectedValue
     );
-  
   }
 
   /**
    * Asserts members of two arrays are deeply equal
+   * Order of members is unimportant
    * https://www.chaijs.com/api/bdd/#method_deep
    * @param {*} actualValue
    * @param {*} expectedValue
    * @param {*} customErrorMsg
    * @returns
    */
-  assertDeepMembers( actualValue, expectedValue, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.have.deep.members(
+  assertDeepMembers(actualValue, expectedValue, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.have.deep.members(
       expectedValue
     );
-  
+  }
+
+  /**
+   * Asserts members of two arrays are deeply equal excluding some properties
+   * Order of members is unimportant
+   * https://www.chaijs.com/api/bdd/#method_deep
+   * https://www.chaijs.com/plugins/chai-exclude/
+   * @param {*} actualValue
+   * @param {*} expectedValue
+   * @param {*} fieldsToExclude
+   * @param {*} customErrorMsg
+   * @returns {*}
+   */
+  assertDeepMembersExcluding(
+    actualValue,
+    expectedValue,
+    fieldsToExclude,
+    customErrorMsg = ""
+  ) {
+    return expect(actualValue, customErrorMsg)
+      .excludingEvery(fieldsToExclude)
+      .to.have.deep.members(expectedValue);
   }
 
   /**
@@ -421,12 +389,10 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns
    */
-  assertDeepIncludeMembers( actualValue, expectedValue, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.deep.include.members(
+  assertDeepIncludeMembers(actualValue, expectedValue, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.deep.include.members(
       expectedValue
     );
-  
   }
 
   /**
@@ -444,13 +410,11 @@ class chaiWrapper {
     actualValue,
     expectedValue,
     fieldsToExclude,
-    customErrorMsg = ''
-  ){
-
-    return expect( actualValue, customErrorMsg )
-      .excludingEvery( fieldsToExclude )
-      .to.deep.equal( expectedValue );
-  
+    customErrorMsg = ""
+  ) {
+    return expect(actualValue, customErrorMsg)
+      .excludingEvery(fieldsToExclude)
+      .to.deep.equal(expectedValue);
   }
 
   /**
@@ -461,12 +425,9 @@ class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns
    */
-  assertMatchesPattern( actualValue, expectedPattern, customErrorMsg = '' ){
-
-    return expect( actualValue, customErrorMsg ).to.matchPattern( expectedPattern );
-  
+  assertMatchesPattern(actualValue, expectedPattern, customErrorMsg = "") {
+    return expect(actualValue, customErrorMsg).to.matchPattern(expectedPattern);
   }
-
 }
 
 module.exports = chaiWrapper;
