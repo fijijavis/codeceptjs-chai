@@ -12,7 +12,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertEqual(actualValue: any, expectedValue: any, customErrorMsg?: any): any;
+  assertEqual(actualValue: any, expectedValue: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_not
    * https://www.chaijs.com/api/bdd/#method_equal
@@ -21,11 +21,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertNotEqual(
-    actualValue: any,
-    expectedValue: any,
-    customErrorMsg?: any
-  ): any;
+  assertNotEqual(actualValue: any, expectedValue: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_deep
    * https://www.chaijs.com/api/bdd/#method_equal
@@ -34,11 +30,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertDeepEqual(
-    actualValue: any,
-    expectedValue: any,
-    customErrorMsg?: any
-  ): any;
+  assertDeepEqual(actualValue: any, expectedValue: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_not
    * https://www.chaijs.com/api/bdd/#method_deep
@@ -48,11 +40,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertNotDeepEqual(
-    actualValue: any,
-    expectedValue: any,
-    customErrorMsg?: any
-  ): any;
+  assertNotDeepEqual(actualValue: any, expectedValue: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_include
    * @param {*} actualValue
@@ -60,11 +48,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertContain(
-    actualValue: any,
-    expectedValueToContain: any,
-    customErrorMsg?: any
-  ): any;
+  assertContain(actualValue: any, expectedValueToContain: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_not
    * https://www.chaijs.com/api/bdd/#method_include
@@ -73,11 +57,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertNotContain(
-    actualValue: any,
-    expectedValueToNotContain: any,
-    customErrorMsg?: any
-  ): any;
+  assertNotContain(actualValue: any, expectedValueToNotContain: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.npmjs.com/package/chai-string#startswithstartwith
    * @param {*} actualValue
@@ -85,11 +65,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertStartsWith(
-    actualValue: any,
-    expectedValueToStartWith: any,
-    customErrorMsg?: any
-  ): any;
+  assertStartsWith(actualValue: any, expectedValueToStartWith: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_not
    * https://www.npmjs.com/package/chai-string#startswithstartwith
@@ -98,11 +74,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertNotStartsWith(
-    actualValue: any,
-    expectedValueToNotStartWith: any,
-    customErrorMsg?: any
-  ): any;
+  assertNotStartsWith(actualValue: any, expectedValueToNotStartWith: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.npmjs.com/package/chai-string#endswithendwith
    * @param {*} actualValue
@@ -110,11 +82,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertEndsWith(
-    actualValue: any,
-    expectedValueToEndWith: any,
-    customErrorMsg?: any
-  ): any;
+  assertEndsWith(actualValue: any, expectedValueToEndWith: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_not
    * https://www.npmjs.com/package/chai-string#endswithendwith
@@ -123,11 +91,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertNotEndsWith(
-    actualValue: any,
-    expectedValueToNotEndWith: any,
-    customErrorMsg?: any
-  ): any;
+  assertNotEndsWith(actualValue: any, expectedValueToNotEndWith: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.npmjs.com/package/chai-json-schema#jsonschemavalue-schema
    * @param {*} targetData
@@ -135,7 +99,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertJsonSchema(targetData: any, jsonSchema: any, customErrorMsg?: any): any;
+  assertJsonSchema(targetData: any, jsonSchema: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/plugins/chai-json-schema-ajv/
    * @param {*} targetData
@@ -144,12 +108,7 @@ declare class chaiWrapper {
    * @param {*} ajvOptions Pass AJV options
    * @returns {*}
    */
-  assertJsonSchemaUsingAJV(
-    targetData: any,
-    jsonSchema: any,
-    customErrorMsg?: any,
-    ajvOptions?: any
-  ): any;
+  assertJsonSchemaUsingAJV(targetData: any, jsonSchema: any, customErrorMsg?: String, ajvOptions?: any): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_property
    * @param {*} targetData
@@ -157,11 +116,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertHasProperty(
-    targetData: any,
-    propertyName: any,
-    customErrorMsg?: any
-  ): any;
+  assertHasProperty(targetData: any, propertyName: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_a
    * @param {*} targetData
@@ -169,11 +124,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertHasAProperty(
-    targetData: any,
-    propertyName: any,
-    customErrorMsg?: any
-  ): any;
+  assertHasAProperty(targetData: any, propertyName: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_a
    * @param {*} targetData
@@ -181,7 +132,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertToBeA(targetData: any, type: any, customErrorMsg?: any): any;
+  assertToBeA(targetData: any, type: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_a
    * @param {*} targetData
@@ -189,7 +140,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertToBeAn(targetData: any, type: any, customErrorMsg?: any): any;
+  assertToBeAn(targetData: any, type: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_match
    * @param {*} targetData
@@ -197,7 +148,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertMatchRegex(targetData: any, regex: any, customErrorMsg?: any): any;
+  assertMatchRegex(targetData: any, regex: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_lengthof
    * @param {*} targetData
@@ -205,28 +156,28 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertLengthOf(targetData: any, length: any, customErrorMsg?: any): any;
+  assertLengthOf(targetData: any, length: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_empty
    * @param {*} targetData
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertEmpty(targetData: any, customErrorMsg?: any): any;
+  assertEmpty(targetData: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_true
    * @param {*} targetData
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertTrue(targetData: any, customErrorMsg?: any): any;
+  assertTrue(targetData: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_false
    * @param {*} targetData
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertFalse(targetData: any, customErrorMsg?: any): any;
+  assertFalse(targetData: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_above
    * @param {*} targetData
@@ -234,7 +185,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertAbove(targetData: any, aboveThan: any, customErrorMsg?: any): any;
+  assertAbove(targetData: any, aboveThan: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_below
    * @param {*} targetData
@@ -242,7 +193,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertBelow(targetData: any, belowThan: any, customErrorMsg?: any): any;
+  assertBelow(targetData: any, belowThan: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_lengthof
    * https://www.chaijs.com/api/bdd/#method_above
@@ -251,11 +202,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertLengthAboveThan(
-    targetData: any,
-    lengthAboveThan: any,
-    customErrorMsg?: any
-  ): any;
+  assertLengthAboveThan(targetData: any, lengthAboveThan: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.chaijs.com/api/bdd/#method_lengthof
    * https://www.chaijs.com/api/bdd/#method_below
@@ -264,11 +211,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertLengthBelowThan(
-    targetData: any,
-    lengthBelowThan: any,
-    customErrorMsg?: any
-  ): any;
+  assertLengthBelowThan(targetData: any, lengthBelowThan: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * https://www.npmjs.com/package/chai-string#equalignorecase
    * @param {*} actualValue
@@ -276,11 +219,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns
    */
-  assertEqualIgnoreCase(
-    actualValue: any,
-    expectedValue: any,
-    customErrorMsg?: any
-  ): any;
+  assertEqualIgnoreCase(actualValue: any, expectedValue: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * Asserts members of two arrays are deeply equal
    * https://www.chaijs.com/api/bdd/#method_deep
@@ -289,19 +228,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns
    */
-  assertDeepMembers(
-    actualValue: any,
-    expectedValue: any,
-    customErrorMsg?: any
-  ): any;
-  /**
-   * Asserts an array deep includes members from another array
-   * https://www.chaijs.com/api/bdd/#method_deep
-   * @param {*} actualValue
-   * @param {*} expectedValue
-   * @param {*} customErrorMsg
-   * @returns
-   */
+  assertDeepMembers(actualValue: any, expectedValue: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * Asserts members of two arrays are deeply equal excluding some properties
    * Order of members is unimportant
@@ -313,18 +240,16 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertDeepMembersExcluding(
-    actualValue: any,
-    expectedValue: any,
-    fieldsToExclude: any,
-    customErrorMsg?: any
-  );
-
-  assertDeepIncludeMembers(
-    actualValue: any,
-    expectedValue: any,
-    customErrorMsg?: any
-  ): any;
+  assertDeepMembersExcluding(actualValue: any, expectedValue: any, fieldsToExclude: any, customErrorMsg?: String);
+  /**
+   * Asserts an array deep includes members from another array
+   * https://www.chaijs.com/api/bdd/#method_deep
+   * @param {*} actualValue
+   * @param {*} expectedValue
+   * @param {*} customErrorMsg
+   * @returns
+   */
+  assertDeepIncludeMembers(actualValue: any, expectedValue: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * Asserts a JSON deep compare excluding some properties of the JSON object
    * https://www.npmjs.com/package/chai-exclude
@@ -335,12 +260,7 @@ declare class chaiWrapper {
    * @param {*} customErrorMsg
    * @returns {*}
    */
-  assertDeepEqualExcluding(
-    actualValue: any,
-    expectedValue: any,
-    fieldsToExclude: any,
-    customErrorMsg?: any
-  ): any;
+  assertDeepEqualExcluding(actualValue: any, expectedValue: any, fieldsToExclude: any, customErrorMsg?: String): Chai.Assertion;
   /**
    * Asserts a JSON object matches a provided pattern
    * https://www.chaijs.com/plugins/chai-match-pattern/
@@ -348,9 +268,39 @@ declare class chaiWrapper {
    * @param {*} expectedPattern
    * @param {*} customErrorMsg
    */
-  assertMatchesPattern(
-    actualValue: any,
-    expectedPattern: any,
-    customErrorMsg?: any
-  ): any;
+  assertMatchesPattern(actualValue: any, expectedPattern: any, customErrorMsg?: String): Chai.Assertion;
+  /**
+   * Asserts an array is sorted in ascending order
+   * https://www.chaijs.com/plugins/chai-sorted/
+   * @param {*} targetData
+   * @param {*} customErrMsg
+   * @returns
+   */
+  assertArrayIsSortedAscending(targetData: Array<String> | Array<Number>, customErrMsg?: String): Chai.Assertion
+  /**
+   * Asserts an array is sorted in descending order
+   * https://www.chaijs.com/plugins/chai-sorted/
+   * @param {*} targetData
+   * @param {*} customErrMsg
+   * @returns
+   */
+  assertArrayIsSortedDescending(targetData: Array<String> | Array<Number>, customErrMsg?: String): Chai.Assertion
+  /**
+   * Asserts an array of objects is sorted in ascending order by the provided key 
+   * https://www.chaijs.com/plugins/chai-sorted/
+   * @param {*} targetData
+   * @param {*} key
+   * @param {*} customErrMsg
+   * @returns
+   */
+  assertArrayIsSortedAscendingBy(targetData: Array<Object>, key: String, customErrMsg?: String): Chai.Assertion
+  /**
+   * Asserts an array of objects is sorted in descending order by the provided key 
+   * https://www.chaijs.com/plugins/chai-sorted/
+   * @param {*} targetData
+   * @param {*} key
+   * @param {*} customErrMsg
+   * @returns
+   */
+  assertArrayIsSortedDescendingBy(targetData: Array<Object>, key: String, customErrMsg?: String): Chai.Assertion
 }

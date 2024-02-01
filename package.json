@@ -1,14 +1,14 @@
 {
   "name": "codeceptjs-chai",
-  "version": "2.3.5",
+  "version": "2.4.2",
   "description": "CodeceptJS helper for chai library",
   "devDependencies": {
     "codeceptjs": "^3.4.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-varspacing": "^1.2.1",
+    "eslint-plugin-codeceptjs": "^1.1.0",
     "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-codeceptjs": "^1.1.0"
+    "eslint-plugin-varspacing": "^1.2.1"
   },
   "dependencies": {
     "ajv": "^6.12.2",
@@ -17,6 +17,7 @@
     "chai-json-schema": "^1.5.1",
     "chai-json-schema-ajv": "^5.1.0",
     "chai-match-pattern": "^1.3.0",
+    "chai-sorted": "^0.2.0",
     "chai-string": "^1.5.0"
   },
   "main": "index.js",
